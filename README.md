@@ -1,1 +1,2 @@
-# CG1.github.io
+# CG1.github.io  
+[サンプル](sample1.html)
