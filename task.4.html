@@ -55,9 +55,9 @@
 
         // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();  
-        var texture1 = textureLoader.load("stone.png");
+        var texture = textureLoader.load("stone.png");
         var mat1 = new THREE.MeshPhongMaterial();
-        mat1.map = texture1;
+        mat1.map = texture;
 
         // バンプマップ読込
         var bump = textureLoader.load("stone-bump.jpg");
@@ -87,7 +87,7 @@
         //なんかクネクネしてるやつ
         var geometry4 = new THREE.TorusKnotGeometry( 0.3, 0.2, 20, 6, 5, 3 ); 
         var torusKnot = new THREE.Mesh( geometry4, mat);
-        torusKnot.position.set( 1.8, 0, 0 );
+        torusKnot.position.set( 0, 1.2, 0 );
         scene.add( torusKnot );
 
 
