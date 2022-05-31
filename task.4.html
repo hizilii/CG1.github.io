@@ -47,28 +47,28 @@
         const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper); */
 
-        /* // テクスチャー読み込み
-        var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("cit.png");
-        var mat = new THREE.MeshPhongMaterial();
-        mat.map = texture; */
-
         // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("stone.jpg");
+        var texture = textureLoader.load("face.jpg");
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
 
+        // テクスチャー読み込み
+        var textureLoader = new THREE.TextureLoader();  
+        var texture1 = textureLoader.load("stone.jpg");
+        var mat1 = new THREE.MeshPhongMaterial();
+        mat1.map = texture1;
+
         // バンプマップ読込
         var bump = textureLoader.load("stone-bump.jpg");
-        mat.bumpMap = bump;
-        mat.bumpscale = 0.2;
+        mat1.bumpMap = bump;
+        mat1.bumpscale = 0.2;
 
         // 箱を作成
         var geometry1 = new THREE.BoxGeometry(0.8, 0.8, 0.8);
         //var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
         //var box = new THREE.Mesh(geometry, material);
-        var box = new THREE.Mesh(geometry1, mat);
+        var box = new THREE.Mesh(geometry1, mat1);
         box.position.set(-1.5,0,0); //位置を指定
         scene.add(box);   // シーンに追加
 
@@ -86,7 +86,7 @@
 
         //なんかクネクネしてるやつ
         var geometry4 = new THREE.TorusKnotGeometry( 0.3, 0.2, 20, 6, 5, 3 ); 
-        var torusKnot = new THREE.Mesh( geometry4, mat);
+        var torusKnot = new THREE.Mesh( geometry4, mat1);
         torusKnot.position.set( 0, 1.2, 0 );
         scene.add( torusKnot );
 
