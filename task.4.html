@@ -99,16 +99,18 @@
           renderer.render(scene, camera);
           requestAnimationFrame(update);
 
-           // 箱を回転させる
+           // 箱を回転させながら縦移動(上)
           box.rotation.x += 0.01;
+          box.position.y += 0.03;
           box.rotation.y += 0.01;
 
           // 箱を回転させる
           Sphere.rotation.x += 0.01;
           Sphere.rotation.y += 0.01;
 
-          // 円柱を回転させる
+          // 円柱を回転させながら縦移動(下)
           Cylinder.rotation.x += 0.01;
+          Cylinder.position.y -= 0.03;
           Cylinder.rotation.y += 0.01;
 
           // なんかクネクネしてるやつを回転させる
