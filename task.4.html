@@ -47,17 +47,17 @@
         const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper);
 
-        // テクスチャー読み込み
+        /* // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("cit.png");
         var mat = new THREE.MeshPhongMaterial();
-        mat.map = texture;
+        mat.map = texture; */
 
         // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("stone.png");
-        var mat1 = new THREE.MeshPhongMaterial();
-        mat1.map = texture;
+        var mat = new THREE.MeshPhongMaterial();
+        mat.map = texture;
 
         // バンプマップ読込
         var bump = textureLoader.load("stone-bump.jpg");
@@ -74,13 +74,13 @@
 
         // 球を作成
         var geometry2 = new THREE.SphereGeometry(0.5, 32, 32 ); ;
-        var Sphere = new THREE.Mesh(geometry2, mat1);
+        var Sphere = new THREE.Mesh(geometry2, mat);
         Sphere.position.set(0,0,0);
         scene.add(Sphere);
 
         // 円柱を作成
         var geometry3 = new THREE.CylinderGeometry( 0.2, 0.5, 0.5, 20, 4 );
-        var Cylinder = new THREE.Mesh(geometry3, mat1);
+        var Cylinder = new THREE.Mesh(geometry3, mat);
         Cylinder.position.set(1.5,0,0);
         scene.add(Cylinder);
 
