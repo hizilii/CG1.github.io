@@ -10,4 +10,8 @@
   
 コンピュータグラフィックス第3回目　課題  
 ↓  
-[task.3.html](task.3.html)
+[task.3.html](task.3.html)  
+  
+コンピュータグラフィックス第4回目　課題  
+↓  
+[task.4.html](task.4.html)
