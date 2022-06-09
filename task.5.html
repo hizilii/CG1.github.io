@@ -45,6 +45,11 @@
         // シーンに追加
         scene.add(directionalLight2);
 
+        var pointLight=new THREE.PointLight(0xffffff);
+        pointLight.position.set(7,3.5,5);
+        pointLight.castShadow=true;
+        scene.add(pointLight);
+
         /* // helper
         const gridHelper = new THREE.GridHelper(2,10); // size, step
         scene.add(gridHelper);
@@ -80,7 +85,7 @@
           const sprite = new THREE.Sprite(material);
           // ランダムな座標に配置
           sprite.position.x = 2 * (Math.random() - 0.5);
-          sprite.position.y = 10 * Math.random();
+          sprite.position.y = 5 * Math.random();
           sprite.position.z = 2 * (Math.random() - 0.5);
           // スケールを調整
           sprite.scale.set(0.2, 0.2, 0.2);
@@ -106,7 +111,7 @@
           const sprite2 = new THREE.Sprite(material2);
           // ランダムな座標に配置
           sprite2.position.x = 3 * (Math.random() - 0.5);
-          sprite2.position.y = 0.5;
+          sprite2.position.y = 0;
           sprite2.position.z = 3 * (Math.random() - 0.5);
           // スケールを調整
           sprite2.scale.set(0.5, 0.5, 0.5);
