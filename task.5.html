@@ -42,22 +42,28 @@
         // シーンに追加
         scene.add(directionalLight2);
 
-        var pointLight=new THREE.PointLight(0xffffff);
-        pointLight.position.set(7,3.5,5);
-        pointLight.castShadow=true;
-        scene.add(pointLight);
-
         /* // helper
         const gridHelper = new THREE.GridHelper(2,10); // size, step
         scene.add(gridHelper);
         const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
         scene.add(axisHelper); */
 
+        // テクスチャー読み込み
+        var textureLoader = new THREE.TextureLoader();  
+        var texture = textureLoader.load("stone.jpg");
+        var mat1 = new THREE.MeshPhongMaterial();
+        mat1.map = texture;
+
+        // バンプマップ読込
+        var bump = textureLoader.load("stone-bump.jpg");
+        mat1.bumpMap = bump;
+        mat1.bumpscale = 0.2;
+
         // 平面を作成
         var planeGeometry = new THREE.PlaneGeometry(20,20);
-        //var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
-        var planeMaterial = new THREE.MeshPhongMaterial({ color: 0x808080 });
-        var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+        // var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
+        // var planeMaterial = new THREE.MeshPhongMaterial({ color: 0x808080 });
+        var plane = new THREE.Mesh(planeGeometry,mat1);
         plane.rotation.set( -Math.PI/2, 0, 0 );
         plane.position.set(0,0,0);
         scene.add(plane);
