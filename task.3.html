@@ -68,6 +68,55 @@
         plane.position.set(0,-1.5,-2);
         scene.add(plane);
 
+        // THREE.CylinderGeometry(上面円の半径, 下面円の半径, 高さ, 縦分割数, 横分割数, 上下面を無くすか否か)
+        var Cylindergeometry = new THREE.CylinderGeometry(
+          5,
+          5,
+          15,
+          25,
+          25,
+          true
+        );
+
+        const Cylindermaterial = new THREE.MeshBasicMaterial({
+          map: texture, // テクスチャーを指定
+          color: 0x007eff, // 色
+          transparent: true, // 透明の表示許可
+          blending: THREE.AdditiveBlending, // ブレンドモード
+          side: THREE.DoubleSide, // 表裏の表示設定
+          depthWrite: false // デプスバッファへの書き込み可否
+        });
+
+        // 光る柱のメッシュを作成
+        var Cylinder = new THREE.Mesh(Cylindergeometry, Cylindermaterial);
+
+        // THREE.TorusGeometry(半径, 太さ, 放射状の分割数, 管の分割数)
+        const Torusgeometry = new THREE.TorusGeometry(6, 3, 2, 100);
+
+        const Torusmaterial = new THREE.MeshBasicMaterial({
+          color: 0x007eff,
+          map: texture,
+          transparent: true,
+          blending: THREE.AdditiveBlending,
+          side: THREE.FrontSide
+        });
+
+        // 光る渦のメッシュを作成
+        var Torus = new THREE.Mesh(Torusgeometry, Torusmaterial);
+
+        Torus.rotaition.x = 90 * Math.PI / 180; // 90度回転
+        Torus.position.y = 0.01; // 少しだけ浮かせる
+        angle++; // 角度をインクリメント
+        Torus.rotation.y = angle * Math.PI / 180; // 回転
+
+        const Spritematerial = new THREE.SpriteMaterial({
+          color: 0x007eff,
+          map: texture,
+          transparent: true,
+          blending: THREE.AdditiveBlending
+        });
+        const sprite = new THREE.Sprite(Spritematerial);
+
         // 胴体を作成
         var body_g = new THREE.SphereGeometry( 1, 32, 32 ); 
         var material_b = new THREE. MeshPhongMaterial( {color: 0xff66ff });
@@ -199,10 +248,19 @@
         kirby.position.set(0,0,0);// カービィグループの原点の位置
         scene.add(kirby);
 
+        // 魔法陣のオブジェクト
+        const mahoujin = new THREE.Group();
+        mahoujin.add(Cylinder);
+        mahoujin.add(Torus);
+        mahoujin.add(sprite);
+        mahoujin.position.set(0,0,0);
+        scene.add(mahoujin);
+
         //全体のオブジェクト
         const all = new THREE.Group();
         all.add(plane);// 平面を追加
         all.add(kirby); // カービィを追加
+        all.add(mahoujin);
         all.position.set(0,0,0);// 全体グループの原点の位置
         scene.add(all);
         
@@ -216,6 +274,11 @@
 
           // カービィを回転させる
           kirby.rotation.y += 0.03;;
+
+          // 徐々に上へ
+          sprite.position.y += 0.1;
+          // 徐々に薄く
+          Spritematerial.opacity -= 0.01;
         }
       }
     </script>
