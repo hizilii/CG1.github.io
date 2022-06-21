@@ -59,13 +59,13 @@
         // scene.add(axisHelper);
 
         // 平面を作成
-        var sphereGeometry = new THREE.SphereGeometry(1.0,32,32);
+        var sphereGeometry = new THREE.SphereGeometry(3.0,32,32);
         //var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
         var sphereMaterial = new THREE.MeshPhongMaterial({ color: 0x808080 });
         var sphere = new THREE.Mesh(sphereGeometry,sphereMaterial);
         sphere.receiveShadow = true; //影がつく
         // sphere.rotation.set( -Math.PI/2, 0, 0 );
-        sphere.position.set(0,-1.5,-2);
+        sphere.position.set(0,-3.0,0);
         scene.add(sphere);
 
         // 形状データを作成
