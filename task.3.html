@@ -89,7 +89,7 @@
         // マテリアルを作成
         const Pointmaterial = new THREE.PointsMaterial({
           // 一つ一つのサイズ
-          size: 10,
+          size: 30,
           // 色
           color: 0xffffff,
         });
@@ -245,12 +245,10 @@
           renderer.render(scene, camera);
           requestAnimationFrame(update);
 
-          // カービィを回転させる
-          if(kirby.position.y == 0){
-            kirby.position.y += 0.01;
-          }
-          if(kirby.position.y == 1){
-            kirby.position.y -= 0.01;
+          // カービィをジャンプさせる
+          kirby.position.y += 0.01;
+          if(kirby.position.y > 1){
+            kirby.position.y = 0;
           }
         }
       }
