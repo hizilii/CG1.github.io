@@ -64,6 +64,11 @@
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
 
+        // バンプマップ読込
+        var bump = textureLoader.load("moon-bump.jpg");
+        mat.bumpMap = bump;
+        mat.bumpscale = 0.2;
+
         // 月を作成
         var sphereGeometry = new THREE.SphereGeometry(5.0,32,32);
         var sphere = new THREE.Mesh(sphereGeometry,mat);
