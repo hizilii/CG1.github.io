@@ -62,11 +62,11 @@
         var sphereGeometry = new THREE.SphereGeometry(1.0,32,32);
         //var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
         var sphereMaterial = new THREE.MeshPhongMaterial({ color: 0x808080 });
-        var shere = new THREE.Mesh(spereGeometry,sphereMaterial);
-        shpere.receiveShadow = true; //影がつく
+        var sphere = new THREE.Mesh(sphereGeometry,sphereMaterial);
+        sphere.receiveShadow = true; //影がつく
         // sphere.rotation.set( -Math.PI/2, 0, 0 );
-        spere.position.set(0,-1.5,-2);
-        scene.add(spere);
+        sphere.position.set(0,-1.5,-2);
+        scene.add(sphere);
 
         // 形状データを作成
         const SIZE = 3000;
@@ -231,7 +231,7 @@
 
         //全体のオブジェクト
         const all = new THREE.Group();
-        all.add(spere);// 平面を追加
+        all.add(sphere);// 平面を追加
         all.add(kirby); // カービィを追加
         all.add(particle); // パーティクルを追加
         all.position.set(0,0,0);// 全体グループの原点の位置
