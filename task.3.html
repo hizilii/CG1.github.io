@@ -246,7 +246,10 @@
           requestAnimationFrame(update);
 
           // カービィを回転させる
-          kirby.rotation.y += 0.03;;
+          kirby.position.y += 0.01;;
+          if(kirby.position.y>2){
+            kirby.position.y = 0;
+          }
         }
       }
     </script>
