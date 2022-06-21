@@ -58,11 +58,15 @@
         // const axisHelper = new THREE.AxisHelper(2); //軸の長さ　X：赤、Y：緑、z：青
         // scene.add(axisHelper);
 
-        // 平面を作成
+        // テクスチャー読み込み
+        var textureLoader = new THREE.TextureLoader();  
+        var texture = textureLoader.load("moon.jpg");
+        var mat = new THREE.MeshPhongMaterial();
+        mat.map = texture;
+
+        // 月を作成
         var sphereGeometry = new THREE.SphereGeometry(5.0,32,32);
-        //var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
-        var sphereMaterial = new THREE.MeshPhongMaterial({ color: 0x808080 });
-        var sphere = new THREE.Mesh(sphereGeometry,sphereMaterial);
+        var sphere = new THREE.Mesh(sphereGeometry,mat);
         sphere.receiveShadow = true; //影がつく
         // sphere.rotation.set( -Math.PI/2, 0, 0 );
         sphere.position.set(0,-6.3,-1.0);
@@ -231,7 +235,7 @@
 
         //全体のオブジェクト
         const all = new THREE.Group();
-        all.add(sphere);// 平面を追加
+        all.add(sphere);// 月を追加
         all.add(kirby); // カービィを追加
         all.add(particle); // パーティクルを追加
         all.position.set(0,0,0);// 全体グループの原点の位置
