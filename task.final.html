@@ -101,10 +101,10 @@
         scene.add( cylinder5 );
 
         // 柵
-        var fenceGeometry = new THREE.BoxGeometry(3,0.5,0.3);
+        var fenceGeometry = new THREE.BoxGeometry(3,0.2,0.2);
         var fenceMaterial = new THREE.MeshPhongMaterial({ color: 0xdc143c });
         var fence = new THREE.Mesh(fenceGeometry,fenceMaterial);
-        fence.position.set(1.5,5,0);
+        fence.position.set(1.5,4.5,1);
         scene.add(fence);
 
         // テクスチャー読み込み
