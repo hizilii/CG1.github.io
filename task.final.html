@@ -127,7 +127,7 @@
         var textureLoader = new THREE.TextureLoader();  
         var texture1 = textureLoader.load("ground.jpg");
         var mat1 = new THREE.MeshPhongMaterial();
-        mat1.map = texture;
+        mat1.map = texture1;
 
         // 壁(左)を作成
         var plane1Geometry = new THREE.PlaneGeometry(30,7);
@@ -146,7 +146,7 @@
         // 地面を作成
         var geometry1 = new THREE.BoxGeometry(10, 7, 30);
         var box = new THREE.Mesh(geometry1, mat1);
-        box.position.set(3.5,3.5,0); 
+        box.position.set(7,0,0); 
         scene.add(box);
 
         // 橋のオブジェクト
