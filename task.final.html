@@ -107,6 +107,27 @@
         fence.position.set(1.5,4.5,1);
         scene.add(fence);
 
+        // 柵
+        var fence1Geometry = new THREE.BoxGeometry(3,0.2,0.2);
+        var fence1Material = new THREE.MeshPhongMaterial({ color: 0xdc143c });
+        var fence = new THREE.Mesh(fence1Geometry,fence1Material);
+        fence1.position.set(1.5,4.5,-1);
+        scene.add(fence1);
+
+        // 柵
+        var fence2Geometry = new THREE.BoxGeometry(3,0.2,0.2);
+        var fence2Material = new THREE.MeshPhongMaterial({ color: 0xdc143c });
+        var fence = new THREE.Mesh(fence2Geometry,fence2Material);
+        fence2.position.set(-1.5,4.5,1);
+        scene.add(fence2);
+
+        // 柵
+        var fence3Geometry = new THREE.BoxGeometry(3,0.2,0.2);
+        var fence3Material = new THREE.MeshPhongMaterial({ color: 0xdc143c });
+        var fence3 = new THREE.Mesh(fence3Geometry,fence3Material);
+        fence3.position.set(-1.5,4.5,-1);
+        scene.add(fence3);
+
         // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("renga.jpg");
