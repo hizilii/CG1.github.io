@@ -141,10 +141,10 @@
         scene.add(bridge);
 
         // 円柱
-        var cylinderGeometry = new THREE.CylinderGeometry( 0.2, 0.2, 1, 6 );
+        var cylinderGeometry = new THREE.CylinderGeometry( 0.4, 0.4, 1.5, 10 );
         var cylinderMaterial = new THREE.MeshPhongMaterial( {color: 0xdc143c } );
         var cylinder = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
-        cylinder.position.set( 3, 2, 1 );
+        cylinder.position.set( 3, 4, 1 );
         scene.add( cylinder );
 
         // テクスチャー読み込み
