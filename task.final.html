@@ -200,13 +200,33 @@
   
         for(let i = 0; i < 10; i++){
           var material2 = new THREE.MeshFaceMaterial(materials);
-          var building_g = new THREE.BoxGeometry(1.5, 5, 1.5);
-          var building = new THREE.Mesh(building_g, material2);
-          building.position.x = 10;
-          building.position.y = 5.3;
-          building.position.z = 48 * (Math.random());
+          var lbuilding_g = new THREE.BoxGeometry(1.5, 5, 1.5);
+          var lbuilding = new THREE.Mesh(lbuilding_g, material2);
+          lbuilding.position.x = -11;
+          lbuilding.position.y = 5.3;
+          lbuilding.position.z = 48 * (Math.random() - 0.7);
 
-          scene.add(building);
+          scene.add(lbuilding);
+        }
+
+        var materials1 = [
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/building1.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/building1.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/heriport.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/black.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/building1.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/building1.png")}),
+        ];
+  
+        for(let i = 0; i < 10; i++){
+          var material3 = new THREE.MeshFaceMaterial(materials1);
+          var rbuilding_g = new THREE.BoxGeometry(1.5, 5, 1.5);
+          var rbuilding = new THREE.Mesh(rbuilding_g, material3);
+          rbuilding.position.x = 11;
+          rbuilding.position.y = 5.3;
+          rbuilding.position.z = 48 * (Math.random() - 0.7);
+
+          scene.add(rbuilding);
         }
 
         // 橋のオブジェクト
