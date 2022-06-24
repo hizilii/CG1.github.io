@@ -201,17 +201,15 @@
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/building.png")}),
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/building.png")}),
         ];
-
-        var material2 = new THREE.MeshFaceMaterial(materials);
-        var building_g = new THREE.BoxGeometry(1.5, 5, 1.5);
-        var building = new THREE.Mesh(building_g, material2);
-        building.castShadow = true;
-        building.position.x = 12;
-        building.position.y = 5.3;
-        building.position.z = 53;
   
         for(let i = 0; i < 10; i++){
-          building.position.z -= 5;
+          var material2 = new THREE.MeshFaceMaterial(materials);
+          var building_g = new THREE.BoxGeometry(1.5, 5, 1.5);
+          var building = new THREE.Mesh(building_g, material2);
+          building.castShadow = true;
+          building.position.x = 11;
+          building.position.y = 5.3;
+          building.position.z = 48 * (Math.random() - 0.5);
 
           scene.add(building);
         }
