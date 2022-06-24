@@ -192,13 +192,13 @@
         var materials = [
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/building.png")}),
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/building.png")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img1.png")}),
-          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img1.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/heriport.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/black.png")}),
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/building.png")}),
           new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/building.png")}),
         ];
 
-        for(let i = 0; i < 4; i++){
+        for(let i = 0; i < 10; i++){
           var material2 = new THREE.MeshFaceMaterial(materials);
           var building_g = new THREE.BoxGeometry(1.5, 5, 1.5);
           var building = new THREE.Mesh(building_g, material2);
@@ -208,12 +208,6 @@
 
           scene.add(building);
         }
-
-        /* // ビル
-        var building_g = new THREE.BoxGeometry(1, 5, 1);
-        var building = new THREE.Mesh(building_g, material2);
-        building.position.set(6,5.3,3);
-        scene.add(building); */
 
         // 橋のオブジェクト
         const bridge = new THREE.Group();
