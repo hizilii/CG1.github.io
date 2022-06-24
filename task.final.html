@@ -44,6 +44,11 @@
         // シーンに追加
         scene.add(directionalLight2);
 
+        var pointLight=new THREE.PointLight(0xffffff);
+        pointLight.position.set(10,6,30);
+        pointLight.castShadow=true;
+        scene.add(pointLight);
+
         // 川を作成
         var river_g = new THREE.BoxGeometry(7,0.1,50);
         var river_m = new THREE.MeshPhongMaterial({ color: 0x00008b });
@@ -207,9 +212,9 @@
           var building_g = new THREE.BoxGeometry(1.5, 5, 1.5);
           var building = new THREE.Mesh(building_g, material2);
           building.castShadow = true;
-          building.position.x = 11;
+          building.position.x = 10;
           building.position.y = 5.3;
-          building.position.z = 48 * (Math.random() - 0.5);
+          building.position.z = 48 * (Math.random() - 0.3);
 
           scene.add(building);
         }
