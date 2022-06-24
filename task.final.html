@@ -19,6 +19,8 @@
         var renderer = new THREE.WebGLRenderer();
         document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
+        // レンダラー：シャドウを有効にする
+        renderer.shadowMap.enabled = true;
 
         // シーンを作成
         const scene = new THREE.Scene();
@@ -202,9 +204,10 @@
           var material2 = new THREE.MeshFaceMaterial(materials);
           var building_g = new THREE.BoxGeometry(1.5, 5, 1.5);
           var building = new THREE.Mesh(building_g, material2);
-          building.position.x = 6;
+          building.castShadow = true;
+          building.position.x = 9;
           building.position.y = 5.3;
-          building.position.z = 48 * (Math.random() - 0.5);
+          building.position.z = 48 * (Math.random() - 0.7);
 
           scene.add(building);
         }
