@@ -43,79 +43,78 @@
         scene.add(directionalLight2);
 
         // 川を作成
-        var planeGeometry = new THREE.PlaneGeometry(7,50);
-        // var planeMaterial = new THREE.MeshBasicMaterial({color: 0x00ff00});
-        var planeMaterial = new THREE.MeshPhongMaterial({ color: 0x00008b });
-        var plane = new THREE.Mesh(planeGeometry,planeMaterial);
-        plane.rotation.set( -Math.PI/2, 0, 0 );
-        plane.position.set(0,-3.5,0);
-        scene.add(plane);
+        var river_g = new THREE.BoxGeometry(7,0.1,50);
+        var river_m = new THREE.MeshPhongMaterial({ color: 0x00008b });
+        var river = new THREE.Mesh(river_g,river_m);
+        river.rotation.set( -Math.PI/2, 0, 0 );
+        river.position.set(0,-3.5,0);
+        scene.add(river);
 
         // 土台
         var bridgeground_g = new THREE.BoxGeometry(7.3,0.2,3);
         var bridgeground_m = new THREE.MeshPhongMaterial({ color: 0xdc143c });
         var bridgeground = new THREE.Mesh(bridgeground_g,bridgeground_m);
-        bridgeground.position.set(0,3.7,0);
+        bridgeground.position.set(0,3.6,0);
 
         // 柱
-        var cylinder_g = new THREE.CylinderGeometry( 0.3, 0.3, 1.5, 10 );
-        var cylinder_m = new THREE.MeshPhongMaterial( {color: 0xdc143c } );
-        var cylinder = new THREE.Mesh( cylinder_g, cylinder_m );
-        cylinder.position.set( 3, 4.4, 1 );
+        var pole_g = new THREE.CylinderGeometry( 0.3, 0.3, 1.5, 10 );
+        var pole_m = new THREE.MeshPhongMaterial( {color: 0xdc143c } );
+        var pole = new THREE.Mesh( pole_g, pole_m );
+        pole.position.set( 3, 4.3, 1 );
 
         // 柱
-        var cylinder1_g = new THREE.CylinderGeometry( 0.3, 0.3, 1.5, 10 );
-        var cylinder1_m = new THREE.MeshPhongMaterial( {color: 0xdc143c } );
-        var cylinder1 = new THREE.Mesh( cylinder1_g, cylinder1_m );
-        cylinder1.position.set( 3, 4.4, -1 );
+        var pole1_g = new THREE.CylinderGeometry( 0.3, 0.3, 1.5, 10 );
+        var pole1_m = new THREE.MeshPhongMaterial( {color: 0xdc143c } );
+        var pole1 = new THREE.Mesh( pole1_g, pole1_m );
+        pole1.position.set( 3, 4.3, -1 );
 
         // 柱
-        var cylinder2_g = new THREE.CylinderGeometry( 0.3, 0.3, 1.5, 10 );
-        var cylinder2_m = new THREE.MeshPhongMaterial( {color: 0xdc143c } );
-        var cylinder2 = new THREE.Mesh( cylinder2_g, cylinder2_m );
-        cylinder2.position.set( 0, 4.4, 1 );
+        var pole2_g = new THREE.CylinderGeometry( 0.3, 0.3, 1.5, 10 );
+        var pole2_m = new THREE.MeshPhongMaterial( {color: 0xdc143c } );
+        var pole2 = new THREE.Mesh( pole2_g, pole2_m );
+        pole2.position.set( 0, 4.3, 1 );
 
         // 柱
-        var cylinder3_g = new THREE.CylinderGeometry( 0.3, 0.3, 1.5, 10 );
-        var cylinder3_m = new THREE.MeshPhongMaterial( {color: 0xdc143c } );
-        var cylinder3 = new THREE.Mesh( cylinder3_g, cylinder3_m );
-        cylinder3.position.set( 0, 4.4, -1 );
+        var pole3_g = new THREE.CylinderGeometry( 0.3, 0.3, 1.5, 10 );
+        var pole3_m = new THREE.MeshPhongMaterial( {color: 0xdc143c } );
+        var pole3 = new THREE.Mesh( pole3_g, pole3_m );
+        pole3.position.set( 0, 4.3, -1 );
 
         // 柱
-        var cylinder4_g = new THREE.CylinderGeometry( 0.3, 0.3, 1.5, 10 );
-        var cylinder4_m = new THREE.MeshPhongMaterial( {color: 0xdc143c } );
-        var cylinder4 = new THREE.Mesh( cylinder4_g, cylinder4_m );
-        cylinder4.position.set( -3, 4.4, 1 );
+        var pole4_g = new THREE.CylinderGeometry( 0.3, 0.3, 1.5, 10 );
+        var pole4_m = new THREE.MeshPhongMaterial( {color: 0xdc143c } );
+        var pole4 = new THREE.Mesh( pole4_g, pole4_m );
+        pole4.position.set( -3, 4.3, 1 );
 
         // 柱
-        var cylinder5_g = new THREE.CylinderGeometry( 0.3, 0.3, 1.5, 10 );
-        var cylinder5_m = new THREE.MeshPhongMaterial( {color: 0xdc143c } );
-        var cylinder5 = new THREE.Mesh( cylinder5_g, cylinder5_m );
-        cylinder5.position.set( -3, 4.4, -1 );
+        var pole5_g = new THREE.CylinderGeometry( 0.3, 0.3, 1.5, 10 );
+        var pole5_m = new THREE.MeshPhongMaterial( {color: 0xdc143c } );
+        var pole5 = new THREE.Mesh( pole5_g, pole5_m );
+        pole5.position.set( -3, 4.3, -1 );
 
         // 柵
         var fence_g = new THREE.BoxGeometry(3,0.2,0.2);
         var fence_m = new THREE.MeshPhongMaterial({ color: 0xdc143c });
         var fence = new THREE.Mesh(fence_g,fence_m);
-        fence.position.set(1.5,4.7,1);
+        fence.position.set(1.5,4.6,1);
 
         // 柵
         var fence1_g = new THREE.BoxGeometry(3,0.2,0.2);
         var fence1_m = new THREE.MeshPhongMaterial({ color: 0xdc143c });
         var fence1 = new THREE.Mesh(fence1_g,fence1_m);
-        fence1.position.set(1.5,4.7,-1);
+        fence1.position.set(1.5,4.6,-1);
 
         // 柵
         var fence2_g = new THREE.BoxGeometry(3,0.2,0.2);
         var fence2_m = new THREE.MeshPhongMaterial({ color: 0xdc143c });
         var fence2 = new THREE.Mesh(fence2_g,fence2_m);
-        fence2.position.set(-1.5,4.7,1);
+        fence2.position.set(-1.5,4.6,1);
 
         // 柵
         var fence3_g = new THREE.BoxGeometry(3,0.2,0.2);
         var fence3_m = new THREE.MeshPhongMaterial({ color: 0xdc143c });
         var fence3 = new THREE.Mesh(fence3_g,fence3_m);
-        fence3.position.set(-1.5,4.7,-1);
+        fence3.position.set(-1.5,4.6,-1);
 
         // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();  
@@ -130,40 +129,76 @@
         mat1.map = texture1;
 
         // 壁(左)を作成
-        var plane1Geometry = new THREE.PlaneGeometry(50,7);
-        var plane1 = new THREE.Mesh(plane1Geometry,mat);
-        plane1.rotation.set( 0, Math.PI/2, 0 );
-        plane1.position.set(-3.5,0,0);
-        scene.add(plane1);
+        var lwall_g = new THREE.PlaneGeometry(50,7);
+        var lwall = new THREE.Mesh(lwall_g,mat);
+        lwall.rotation.set( 0, Math.PI/2, 0 );
+        lwall.position.set(-3.5,0,0);
+        scene.add(lwall);
 
         // 壁(右)を作成
-        var plane2Geometry = new THREE.PlaneGeometry(50,7);
-        var plane2 = new THREE.Mesh(plane2Geometry,mat);
-        plane2.rotation.set( 0, -Math.PI/2, 0 );
-        plane2.position.set(3.5,0,0);
-        scene.add(plane2);
+        var rwall_g = new THREE.PlaneGeometry(50,7);
+        var rwall = new THREE.Mesh(rwall_g,mat);
+        rwall.rotation.set( 0, -Math.PI/2, 0 );
+        rwall.position.set(3.5,0,0);
+        scene.add(rwall);
 
         // 地面(左)を作成
-        var geometry = new THREE.BoxGeometry(10, 7, 50);
-        var box = new THREE.Mesh(geometry, mat1);
-        box.position.set(-8.6,0,0); 
-        scene.add(box);
+        var lground_g = new THREE.BoxGeometry(10, 7, 50);
+        var lground = new THREE.Mesh(lground_g, mat1);
+        lground.position.set(-8.6,0,0); 
+        scene.add(lground);
 
         // 地面(右)を作成
-        var geometry1 = new THREE.BoxGeometry(10, 7, 50);
-        var box1 = new THREE.Mesh(geometry1, mat1);
-        box1.position.set(8.6,0,0); 
-        scene.add(box1);
+        var rground_g = new THREE.BoxGeometry(10, 7, 50);
+        var rground = new THREE.Mesh(rground_g, mat1);
+        rground.position.set(8.6,0,0); 
+        scene.add(rground);
+
+        // 桜(左)をスプライトで作成
+        var textureLoader = new THREE.TextureLoader();  
+        var texture = textureLoader.load("img/cherryblossom.png");
+        const material = new THREE.SpriteMaterial({ map: texture,});
+
+        // 桜(右)をスプライトで作成
+        var textureLoader = new THREE.TextureLoader();  
+        var texture = textureLoader.load("img/cherryblossom.png");
+        const material1 = new THREE.SpriteMaterial({ map: texture,});
+
+        // 桜並木(左)を作成
+        for (let i = 0; i < 15; i++) {
+          const sprite = new THREE.Sprite(material);
+          // ランダムな座標に配置
+          sprite.position.x = -3.7;
+          sprite.position.y = 7;
+          sprite.position.z = 5 * (Math.random() - 0.5);
+          // スケールを調整
+          sprite.scale.set(0.5, 0.5, 0.5);
+
+          scene.add(sprite);
+        }
+
+        // 桜並木(右)を作成
+        for (let i = 0; i < 15; i++) {
+          const sprite1 = new THREE.Sprite(material1);
+          // ランダムな座標に配置
+          sprite1.position.x = 3.7;
+          sprite1.position.y = 7;
+          sprite1.position.z = 5 * (Math.random() - 0.5);
+          // スケールを調整
+          sprite1.scale.set(0.5, 0.5, 0.5);
+
+          scene.add(sprite1);
+        }
 
         // 橋のオブジェクト
         const bridge = new THREE.Group();
         bridge.add(bridgeground); 
-        bridge.add(cylinder); 
-        bridge.add(cylinder1); 
-        bridge.add(cylinder2); 
-        bridge.add(cylinder3); 
-        bridge.add(cylinder4);         
-        bridge.add(cylinder5); 
+        bridge.add(pole); 
+        bridge.add(pole1); 
+        bridge.add(pole2); 
+        bridge.add(pole3); 
+        bridge.add(pole4);         
+        bridge.add(pole5); 
         bridge.add(fence); 
         bridge.add(fence1); 
         bridge.add(fence2); 
