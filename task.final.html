@@ -164,12 +164,12 @@
         const material1 = new THREE.SpriteMaterial({ map: texture,});
 
         // 桜並木(左)を作成
-        for (let i = 0; i < 15; i++) {
+        for (let i = 0; i < 30; i++) {
           const sprite = new THREE.Sprite(material);
           // ランダムな座標に配置
-          sprite.position.x = -3.7;
+          sprite.position.x = -4.0;
           sprite.position.y = 7;
-          sprite.position.z = 50 * (Math.random() - 0.5);
+          sprite.position.z = 50 * (Math.random() - 0.2);
           // スケールを調整
           sprite.scale.set(5, 5, 5);
 
@@ -177,12 +177,12 @@
         }
 
         // 桜並木(右)を作成
-        for (let i = 0; i < 15; i++) {
+        for (let i = 0; i < 30; i++) {
           const sprite1 = new THREE.Sprite(material1);
           // ランダムな座標に配置
-          sprite1.position.x = 3.7;
+          sprite1.position.x = 4.0;
           sprite1.position.y = 7;
-          sprite1.position.z = 50 * (Math.random() - 0.5);
+          sprite1.position.z = 50 * (Math.random() - 0.2);
           // スケールを調整
           sprite1.scale.set(5, 5, 5);
 
