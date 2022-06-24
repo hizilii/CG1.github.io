@@ -147,12 +147,14 @@
         var lground_g = new THREE.BoxGeometry(10, 7, 50);
         var lground = new THREE.Mesh(lground_g, mat1);
         lground.position.set(-8.6,0,0); 
+        lground.reciveShadow = true;
         scene.add(lground);
 
         // 地面(右)を作成
         var rground_g = new THREE.BoxGeometry(10, 7, 50);
         var rground = new THREE.Mesh(rground_g, mat1);
         rground.position.set(8.6,0,0); 
+        rground.receiveShadow = true;
         scene.add(rground);
 
         // 桜(左)をスプライトで作成
