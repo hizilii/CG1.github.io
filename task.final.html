@@ -189,6 +189,22 @@
           scene.add(sprite1);
         }
 
+        var materials = [
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img1.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/building.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/building.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/building.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/building.png")}),
+          new THREE.MeshLambertMaterial({map:THREE.ImageUtils.loadTexture("img/img6.png")}),
+        ];
+ 
+        var material2 = new THREE.MeshFaceMaterial(materials); // マテリアルをセット
+
+        // ビル
+        var building_g = new THREE.BoxGeometry(1, 1, 1);
+        var building = new THREE.Mesh(building_g, material2);
+        scene.add(building);
+
         // 橋のオブジェクト
         const bridge = new THREE.Group();
         bridge.add(bridgeground); 
