@@ -199,11 +199,12 @@
         ];
 
         for(let i = 0; i < 4; i++){
-          var building = new THREE.MeshFaceMaterial(materials);
+          var material2 = new THREE.MeshFaceMaterial(materials);
+          var building_g = new THREE.BoxGeometry(1.5, 5, 1.5);
+          var building = new THREE.Mesh(building_g, material2);
           building.position.x = 6;
           building.position.y = 5.3;
           building.position.z = 48 * (Math.random() - 0.5);
-          building.scale.set(1.5,5,1.5);
 
           scene.add(building);
         }
