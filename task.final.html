@@ -19,8 +19,6 @@
         var renderer = new THREE.WebGLRenderer();
         document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
-        // レンダラー：シャドウを有効にする
-        renderer.shadowMap.enabled = true;
 
         // シーンを作成
         const scene = new THREE.Scene();
@@ -43,11 +41,6 @@
         directionalLight2.position.set(-10, -10, 10);
         // シーンに追加
         scene.add(directionalLight2);
-
-        var pointLight=new THREE.PointLight(0xffffff);
-        pointLight.position.set(10,6,30);
-        pointLight.castShadow=true;
-        scene.add(pointLight);
 
         // 川を作成
         var river_g = new THREE.BoxGeometry(7,0.1,50);
@@ -152,14 +145,12 @@
         var lground_g = new THREE.BoxGeometry(10, 7, 50);
         var lground = new THREE.Mesh(lground_g, mat1);
         lground.position.set(-8.6,0,0); 
-        lground.reciveShadow = true;
         scene.add(lground);
 
         // 地面(右)を作成
         var rground_g = new THREE.BoxGeometry(10, 7, 50);
         var rground = new THREE.Mesh(rground_g, mat1);
         rground.position.set(8.6,0,0); 
-        rground.receiveShadow = true;
         scene.add(rground);
 
         // 桜(左)をスプライトで作成
@@ -211,10 +202,9 @@
           var material2 = new THREE.MeshFaceMaterial(materials);
           var building_g = new THREE.BoxGeometry(1.5, 5, 1.5);
           var building = new THREE.Mesh(building_g, material2);
-          building.castShadow = true;
           building.position.x = 10;
           building.position.y = 5.3;
-          building.position.z = 48 * (Math.random() - 0.3);
+          building.position.z = 48 * (Math.random());
 
           scene.add(building);
         }
