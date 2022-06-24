@@ -46,7 +46,6 @@
         var river_g = new THREE.BoxGeometry(7,0.1,50);
         var river_m = new THREE.MeshPhongMaterial({ color: 0x00008b });
         var river = new THREE.Mesh(river_g,river_m);
-        river.rotation.set( -Math.PI/2, 0, 0 );
         river.position.set(0,-3.5,0);
         scene.add(river);
 
@@ -170,9 +169,9 @@
           // ランダムな座標に配置
           sprite.position.x = -3.7;
           sprite.position.y = 7;
-          sprite.position.z = 5 * (Math.random() - 0.5);
+          sprite.position.z = 50 * (Math.random() - 0.5);
           // スケールを調整
-          sprite.scale.set(0.5, 0.5, 0.5);
+          sprite.scale.set(5, 5, 5);
 
           scene.add(sprite);
         }
@@ -183,9 +182,9 @@
           // ランダムな座標に配置
           sprite1.position.x = 3.7;
           sprite1.position.y = 7;
-          sprite1.position.z = 5 * (Math.random() - 0.5);
+          sprite1.position.z = 50 * (Math.random() - 0.5);
           // スケールを調整
-          sprite1.scale.set(0.5, 0.5, 0.5);
+          sprite1.scale.set(5, 5, 5);
 
           scene.add(sprite1);
         }
