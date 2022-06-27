@@ -309,14 +309,14 @@
         var neck_g = new THREE.CylinderGeometry( 0.1, 0.1, 0.3, 10 );
         var neck_m = new THREE.MeshPhongMaterial( {color: 0xd3d3d3 } );
         var neck = new THREE.Mesh( neck_g, neck_m );
-        neck.position.set( 0, -0.3, 0 );
+        neck.position.set( 0, -0.4, 0 );
         scene.add(neck);
 
         // 胴体を作成
         var body_g = new THREE.BoxGeometry(1, 1.5, 0.3);
         var body_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var body = new THREE.Mesh(body_g, body_m);
-        body.position.set(0,-1.5,0); 
+        body.position.set(0,-1.3,0); 
         scene.add(body);
 
         // 腕(左)を作成
@@ -324,7 +324,7 @@
         var larm_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var larm = new THREE.Mesh(larm_g, larm_m);
         larm.rotation.z = -5;
-        larm.position.set(-0.5,-1,0);
+        larm.position.set(-0.8,-1,0);
         scene.add(larm);
 
         // 腕(右)を作成
@@ -332,21 +332,21 @@
         var rarm_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var rarm = new THREE.Mesh(rarm_g, rarm_m);
         rarm.rotation.z = 5;
-        rarm.position.set(0.5,-1,0);
+        rarm.position.set(0.8,-1,0);
         scene.add(rarm);
 
         // 足(左)を作成
         var lleg_g = new THREE.BoxGeometry(0.2,1,0.2);
         var lleg_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var lleg = new THREE.Mesh(lleg_g, lleg_m);
-        lleg.position.set(-0.25,-2.7,0);
+        lleg.position.set(-0.25,-2.5,0);
         scene.add(lleg);
 
         // 足(右)を作成
         var rleg_g = new THREE.BoxGeometry(0.2,1,0.2);
         var rleg_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var rleg = new THREE.Mesh(rleg_g, rleg_m);
-        rleg.position.set(0.25,-2.7,0);
+        rleg.position.set(0.25,-2.5,0);
         scene.add(rleg);
 
         // 橋のオブジェクト
