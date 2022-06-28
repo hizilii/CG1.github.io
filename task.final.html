@@ -329,19 +329,14 @@
         // 桜の花びらをスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
         var texture2 = textureLoader.load("img/cherry.png");
-
-        const material8 = new THREE.SpriteMaterial({
-          map: texture2,
-          transparent: true,
-          blending: THREE.AdditiveBlending
-        });
+        const material8 = new THREE.SpriteMaterial({ map: texture2,});
 
         for (let i = 0; i < 30; i++) {
           const sprite2 = new THREE.Sprite(material8);
           // ランダムな座標に配置
           sprite2.position.x = 0 * (Math.random() - 0.5);
           sprite2.position.y = -3;
-          sprite2.position.z = -25;
+          sprite2.position.z = 25;
           // スケールを調整
           sprite2.scale.set(0.5, 0.5, 0.5);
 
@@ -468,6 +463,9 @@
 
           sprite2.position.z += 0.3;
           material8.opacity -= 0.01;
+          if(sprite2.position.z > 25){
+            sprite2.position.z = 0;
+          }
 
         }
       }
