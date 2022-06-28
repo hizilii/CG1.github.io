@@ -39,6 +39,11 @@
         // 平行光源2
         var directionalLight2 = new THREE.DirectionalLight(0x888888);
         directionalLight2.position.set(-10, -10, 10);
+
+        //背景
+        let bgTexture = loadPic.load("img/background.jpg");
+        scene.background = bgTexture;
+
         // シーンに追加
         scene.add(directionalLight2);
 
@@ -413,14 +418,14 @@
         var larm_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var larm = new THREE.Mesh(larm_g, larm_m);
         larm.rotation.z = -5;
-        larm.position.set(-0.4,-0.95,0);
+        larm.position.set(-0.48,-0.92,0);
 
         // 腕(右)を作成
         var rarm_g = new THREE.BoxGeometry(1,0.15,0.2);
         var rarm_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var rarm = new THREE.Mesh(rarm_g, rarm_m);
         rarm.rotation.z = 5;
-        rarm.position.set(0.4,-0.95,0);
+        rarm.position.set(0.48,-0.92,0);
 
         // 足(左)を作成
         var lleg_g = new THREE.BoxGeometry(0.15,1,0.2);
@@ -496,7 +501,7 @@
         man.add(rarm);
         man.add(lleg);
         man.add(rleg);
-        man.position.set(-0.6,6.5,2);
+        man.position.set(-0.6,6.3,1);
         scene.add(man);
 
         // 人間(女)のオブジェクト
@@ -507,7 +512,7 @@
         woman.add(rarm1);
         woman.add(lleg1);
         woman.add(rleg1);
-        woman.position.set(0.6,6.5,1);
+        woman.position.set(0.6,6.3,0);
         scene.add(woman);        
 
         update();
