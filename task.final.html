@@ -5,7 +5,7 @@
     <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
   </head>
 <body>
- <h1>ビルボード</h1>
+ <h1>最終課題</h1>
  <script>
       // ページの読み込みを待つ
       window.addEventListener('DOMContentLoaded', init);
@@ -484,17 +484,13 @@
           renderer.render(scene, camera);
           requestAnimationFrame(update);
 
-          particle.position.z += 0.3;
-          material8.opacity -= 0.01;
-          if(particle.position.z > 25){
-            particle.position.z = 0;
+          particle.position.z -= 0.3;
+          material8.opacity -= 0.001;
+          if(particle.position.z < -25){
+            particle.position.z = 25;
           }
 
         }
       }
     </script>
-    この課題ではビルボードを作成した。<br>
-    ある夜の街中をイメージした。<br>
-    (ビル群になぜか木があったり、地面が夜っぽくなかったりするが)<br>
-    木よりもビルの方が高くなるようyのスケールを調整、星はさらに高い位置へと設定した。<br>
 </body>
