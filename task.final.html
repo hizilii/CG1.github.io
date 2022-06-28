@@ -379,7 +379,7 @@
         const x2 = 1;
         const y2 = -3;
         const z2 = 7;
-        vertices.push(x, y, z);
+        vertices2.push(x2, y2, z2);
 
         // 形状データを作成
         const Buffergeometry2 = new THREE.BufferGeometry();
@@ -438,7 +438,7 @@
         var head1_g = new THREE.SphereGeometry(0.3, 32, 32 );
         var head1_m = new THREE. MeshPhongMaterial( {color: 0xd3d3d3} );
         var head1 = new THREE.Mesh(head1_g, head1_m);
-        head.position.set(0,-0.1,1);
+        head1.position.set(0,-0.1,1);
 
         // 胴体を作成
         var body1_g = new THREE.CylinderGeometry(0.25, 0.45, 1.3, 20);
@@ -496,7 +496,7 @@
         man.add(rarm);
         man.add(lleg);
         man.add(rleg);
-        man.position.set(-0.7,7,2);
+        man.position.set(-0.65,6,2);
         scene.add(man);
 
         // 人間(女)のオブジェクト
@@ -507,7 +507,7 @@
         woman.add(rarm1);
         woman.add(lleg1);
         woman.add(rleg1);
-        woman.position.set(0.7,7,3);
+        woman.position.set(0.65,6,1);
         scene.add(woman);        
 
         update();
@@ -523,12 +523,12 @@
             particle.position.z = 10;
           }
 
-          particle1.position.z -= 0.1;
+          particle1.position.z -= 0.05;
           if(particle1.position.z < -25){
             particle1.position.z = 8;
           }
 
-          particle2.position.z -= 0.1;
+          particle2.position.z -= 0.8;
           if(particle2.position.z < -25){
             particle2.position.z = 7;
           }
