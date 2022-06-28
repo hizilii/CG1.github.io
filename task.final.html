@@ -352,6 +352,50 @@
         const particle = new THREE.Points(Buffergeometry, material8);
         scene.add(particle);
 
+        // 頂点情報を格納する配列
+        const vertices1 = [];
+        const x1 = -1;
+        const y1 = -3;
+        const z1 = 8;
+        vertices1.push(x1, y1, z1);
+
+        // 形状データを作成
+        const Buffergeometry1 = new THREE.BufferGeometry();
+        Buffergeometry1.setAttribute('position', new THREE.Float32BufferAttribute(vertices1, 3));
+
+        // マテリアルを作成
+        const material9 = new THREE.PointsMaterial({
+          // 一つ一つのサイズ
+          size: 0.5,
+          map: texture2,
+        });
+
+        // 物体を作成
+        const particle1 = new THREE.Points(Buffergeometry1, material9);
+        scene.add(particle1);
+
+        // 頂点情報を格納する配列
+        const vertices2 = [];
+        const x2 = 1;
+        const y2 = -3;
+        const z2 = 7;
+        vertices.push(x, y, z);
+
+        // 形状データを作成
+        const Buffergeometry2 = new THREE.BufferGeometry();
+        Buffergeometry2.setAttribute('position', new THREE.Float32BufferAttribute(vertices2, 3));
+
+        // マテリアルを作成
+        const material10 = new THREE.PointsMaterial({
+          // 一つ一つのサイズ
+          size: 0.5,
+          map: texture2,
+        });
+
+        // 物体を作成
+        const particle2 = new THREE.Points(Buffergeometry2, material10);
+        scene.add(particle2);
+
         // 頭
         var head_g = new THREE.SphereGeometry(0.3, 32, 32 );
         var head_m = new THREE. MeshPhongMaterial( {color: 0xd3d3d3} );
@@ -452,7 +496,7 @@
         man.add(rarm);
         man.add(lleg);
         man.add(rleg);
-        man.position.set(-0.5,5,1.3);
+        man.position.set(-0.7,7,2);
         scene.add(man);
 
         // 人間(女)のオブジェクト
@@ -463,7 +507,7 @@
         woman.add(rarm1);
         woman.add(lleg1);
         woman.add(rleg1);
-        woman.position.set(0.5,5,1.3);
+        woman.position.set(0.7,7,3);
         scene.add(woman);        
 
         update();
@@ -475,9 +519,18 @@
           requestAnimationFrame(update);
 
           particle.position.z -= 0.1;
-          material8.opacity -= 0.0001;
           if(particle.position.z < -25){
             particle.position.z = 10;
+          }
+
+          particle1.position.z -= 0.1;
+          if(particle1.position.z < -25){
+            particle1.position.z = 8;
+          }
+
+          particle2.position.z -= 0.1;
+          if(particle2.position.z < -25){
+            particle2.position.z = 7;
           }
 
         }
