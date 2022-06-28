@@ -329,33 +329,13 @@
         // 桜の花びらをスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
         var texture2 = textureLoader.load("img/cherry.png");
-        // const material8 = new THREE.SpriteMaterial({ map: texture2,});
 
-        /* for (let i = 0; i < 30; i++) {
-          const sprite2 = new THREE.Sprite(material8);
-          // ランダムな座標に配置
-          sprite2.position.x = 0 * (Math.random() - 0.5);
-          sprite2.position.y = -3;
-          sprite2.position.z = 25;
-          // スケールを調整
-          sprite2.scale.set(0.5, 0.5, 0.5);
-
-          scene.add(sprite2);
-        } */
-
-        /* // 形状データを作成
-        const SIZE = 3000; */
-        // 配置する個数
-        const LENGTH = 30;
         // 頂点情報を格納する配列
         const vertices = [];
-        for (let i = 0; i < LENGTH; i++) {
-          const x = 0 * (Math.random() - 0.5);
-          const y = -3;
-          const z = 10;
-
-          vertices.push(x, y, z);
-        }
+        const x = 0;
+        const y = -3;
+        const z = 10;
+        vertices.push(x, y, z);
 
         // 形状データを作成
         const Buffergeometry = new THREE.BufferGeometry();
@@ -415,14 +395,12 @@
         var head1_m = new THREE. MeshPhongMaterial( {color: 0xd3d3d3} );
         var head1 = new THREE.Mesh(head1_g, head1_m);
         head.position.set(0,-0.1,1);
-        scene.add(head1);
 
         // 胴体を作成
         var body1_g = new THREE.CylinderGeometry(0.25, 0.45, 1.3, 20);
         var body1_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var body1 = new THREE.Mesh(body1_g, body1_m);
         body1.position.set(0,-1.1,1); 
-        scene.add(body1);
 
         // 腕(左)を作成
         var larm1_g = new THREE.BoxGeometry(1,0.15,0.2);
@@ -430,7 +408,6 @@
         var larm1 = new THREE.Mesh(larm1_g, larm1_m);
         larm1.rotation.z = -5;
         larm1.position.set(-0.4,-0.92,1);
-        scene.add(larm1);
 
         // 腕(右)を作成
         var rarm1_g = new THREE.BoxGeometry(1,0.15,0.2);
@@ -438,21 +415,18 @@
         var rarm1 = new THREE.Mesh(rarm1_g, rarm1_m);
         rarm1.rotation.z = 5;
         rarm1.position.set(0.4,-0.92,1);
-        scene.add(rarm1);
 
         // 足(左)を作成
         var lleg1_g = new THREE.BoxGeometry(0.15,1,0.2);
         var lleg1_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var lleg1 = new THREE.Mesh(lleg1_g, lleg1_m);
         lleg1.position.set(-0.15,-2.2,1);
-        scene.add(lleg1);
 
         // 足(右)を作成
         var rleg1_g = new THREE.BoxGeometry(0.15,1,0.2);
         var rleg1_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var rleg1 = new THREE.Mesh(rleg1_g, rleg1_m);
         rleg1.position.set(0.15,-2.2,1);
-        scene.add(rleg1);
 
         // 橋のオブジェクト
         const bridge = new THREE.Group();
@@ -478,7 +452,7 @@
         man.add(rarm);
         man.add(lleg);
         man.add(rleg);
-        man.position.set(-0.5,3.7,0.8);
+        man.position.set(-0.5,5,1.3);
         scene.add(man);
 
         // 人間(女)のオブジェクト
@@ -489,7 +463,7 @@
         woman.add(rarm1);
         woman.add(lleg1);
         woman.add(rleg1);
-        woman.position.set(0.5,3.7,0.8);
+        woman.position.set(0.5,5,1.3);
         scene.add(woman);        
 
         update();
