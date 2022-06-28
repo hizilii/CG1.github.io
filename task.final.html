@@ -41,7 +41,8 @@
         directionalLight2.position.set(-10, -10, 10);
 
         //背景
-        let bgTexture = loadPic.load("img/background.jpg");
+        var textureLoader = new THREE.TextureLoader();
+        var bgtexture = textureLoader.load("background.jpg");
         scene.background = bgTexture;
 
         // シーンに追加
