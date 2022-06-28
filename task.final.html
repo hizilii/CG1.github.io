@@ -26,7 +26,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 0, 15);
+        camera.position.set(0, 0, 30);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -329,9 +329,9 @@
         // 桜の花びらをスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
         var texture2 = textureLoader.load("img/cherry.png");
-        const material8 = new THREE.SpriteMaterial({ map: texture2,});
+        // const material8 = new THREE.SpriteMaterial({ map: texture2,});
 
-        for (let i = 0; i < 30; i++) {
+        /* for (let i = 0; i < 30; i++) {
           const sprite2 = new THREE.Sprite(material8);
           // ランダムな座標に配置
           sprite2.position.x = 0 * (Math.random() - 0.5);
@@ -341,13 +341,36 @@
           sprite2.scale.set(0.5, 0.5, 0.5);
 
           scene.add(sprite2);
+        } */
+
+        /* // 形状データを作成
+        const SIZE = 3000; */
+        // 配置する個数
+        const LENGTH = 30;
+        // 頂点情報を格納する配列
+        const vertices = [];
+        for (let i = 0; i < LENGTH; i++) {
+          const x = 0 * (Math.random() - 0.5);
+          const y = -3;
+          const z = 25;
+
+          vertices.push(x, y, z);
         }
 
-        /* // 桜の花びら
-        const sprite2 = new THREE.Sprite(material8);
-        sprite2.scale.set(0.5,0.5,0.5);
-        sprite2.position.set(-1.5,-3.45,0); 
-        scene.add(sprite2); */
+        // 形状データを作成
+        const Buffergeometry = new THREE.BufferGeometry();
+        Buffergeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+
+        // マテリアルを作成
+        const material8 = new THREE.PointsMaterial({
+          // 一つ一つのサイズ
+          size: 0.5,
+          map: texture2,
+        });
+
+        // 物体を作成
+        const particle = new THREE.Points(Buffergeometry, material8);
+        scene.add(particle);
 
         // 頭
         var head_g = new THREE.SphereGeometry(0.3, 32, 32 );
@@ -461,10 +484,10 @@
           renderer.render(scene, camera);
           requestAnimationFrame(update);
 
-          sprite2.position.z += 0.3;
+          particle.position.z += 0.3;
           material8.opacity -= 0.01;
-          if(sprite2.position.z > 25){
-            sprite2.position.z = 0;
+          if(particle.position.z > 25){
+            particle.position.z = 0;
           }
 
         }
