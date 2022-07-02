@@ -518,7 +518,8 @@
         man.position.set(-0.6,6.3,-0.5);
         scene.add(man);
 
-        const man1 = man;
+        const man1 = new THREE.Group();
+        man1 = man;
         man1.position.set(-7,6.3,20);
         scene.add(man1);
 
