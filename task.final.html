@@ -518,9 +518,14 @@
         man.position.set(-0.6,6.3,-0.5);
         scene.add(man);
 
-        const man1 = new THREE.Object3D();
-        man1 = man;
-        man1.position.set(-7,6.3,20);
+        const man1 = new THREE.Group();
+        man1.add(head);
+        man1.add(body);
+        man1.add(larm);
+        man1.add(rarm);
+        man1.add(lleg);
+        man1.add(rleg);
+        man1.position.set(-8,6.3,20);
         scene.add(man1);
 
         // 人間(女)のオブジェクト
@@ -532,7 +537,17 @@
         woman.add(lleg1);
         woman.add(rleg1);
         woman.position.set(0.6,6.3,-1.5);
-        scene.add(woman);        
+        scene.add(woman);
+        
+        const woman1 = new THREE.Group();
+        woman1.add(head1);
+        woman1.add(body1);
+        woman1.add(larm1);
+        woman1.add(rarm1);
+        woman1.add(lleg1);
+        woman1.add(rleg1);
+        woman1.position.set(8,6.3,-20);
+        scene.add(woman1);
 
         update();
 
@@ -557,6 +572,15 @@
             particle2.position.z = 7;
           }
 
+          man1.position.z -= 0.08;
+          if(man1.position.z < -25){
+            man1.position.z = 20;
+          }
+
+          woman1.position.z += 0.05;
+          if(woman1.position.z > 25){
+            woman1.position.z = -20;
+          }
         }
       }
     </script>
