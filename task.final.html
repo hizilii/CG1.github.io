@@ -603,7 +603,7 @@
         var board_g = new THREE.BoxGeometry(0.2,0.6,0.1);
         var board_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var board = new THREE.Mesh(board_g, board_m);
-        board.position.set(2.2,14.6,0);
+        board.position.set(2.2,14.5,0);
         scene.add(board);
 
         var board1_g = new THREE.BoxGeometry(0.2,0.6,0.1);
@@ -643,13 +643,13 @@
         var herileg4_g = new THREE.BoxGeometry(2,0.1,0.1);
         var herileg4_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var herileg4 = new THREE.Mesh(herileg4_g, herileg4_m);
-        herileg4.position.set(0,13.3,0.6);
+        herileg4.position.set(0,13.35,0.65);
         scene.add(herileg4);
 
         var herileg5_g = new THREE.BoxGeometry(2,0.1,0.1);
         var herileg5_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var herileg5 = new THREE.Mesh(herileg5_g, herileg5_m);
-        herileg5.position.set(0,13.3,-0.6);
+        herileg5.position.set(0,13.35,-0.65);
         scene.add(herileg5);
 
         // 橋のオブジェクト
@@ -735,12 +735,12 @@
             particle2.position.z = 7;
           }
 
-          man2.position.z -= 0.07;
+          man2.position.z -= 0.03;
           if(man2.position.z < -24){
             man2.position.z = 20;
           }
 
-          woman2.position.z += 0.05;
+          woman2.position.z += 0.01;
           if(woman2.position.z >24){
             woman2.position.z = -20;
           }
