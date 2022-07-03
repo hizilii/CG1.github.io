@@ -271,7 +271,7 @@
         scene.add(building);
 
         var material3 = new THREE.MeshFaceMaterial(materials1);
-        var building1_g = new THREE.BoxGeometry(3, 5, 1.5);
+        var building1_g = new THREE.BoxGeometry(3, 5, 3);
         var building1 = new THREE.Mesh(building1_g, material3);
         building1.position.x = -11;
         building1.position.y = 5.3;
@@ -590,23 +590,23 @@
         var heribody_g = new THREE.SphereGeometry(1,32,32);
         var heribody_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var heribody = new THREE.Mesh(heribody_g, heribody_m);
-        heribody.scale.x = 3;
-        heribody.position.set(0,14,0);
+        heribody.scale.x = 2;
+        heribody.position.set(0,13,0);
         scene.add(heribody);
 
-        var heribody1_g = new THREE.BoxGeometry(2,0.5,0.5);
+        var heribody1_g = new THREE.BoxGeometry(2,0.3,0.3);
         var heribody1_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var heribody1 = new THREE.Mesh(heribody1_g, heribody1_m);
         heribody1.position.set(3,13,0);
         scene.add(heribody1);
 
-        /* var board_g = new THREE.BoxGeometry(0.3,0.5,0.3);
+        var board_g = new THREE.BoxGeometry(0.3,0.5,0.3);
         var board_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var board = new THREE.Mesh(board_g, board_m);
         board.position.set(5,14,0);
         scene.add(board);
 
-        var board1_g = new THREE.BoxGeometry(0.3,0.5,0.3);
+        /* var board1_g = new THREE.BoxGeometry(0.3,0.5,0.3);
         var board1_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var board1 = new THREE.Mesh(board1_g, board1_m);
         board1.position.set(5,12,0);
