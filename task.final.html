@@ -581,20 +581,20 @@
         propeller1.position.set(0,15,0);
         scene.add(propeller1);
 
-        var cylinder_g = new THREE.CylinderGeometry(0.1, 0.1, 1, 20);
+        var cylinder_g = new THREE.CylinderGeometry(0.1, 0.1, 0.1, 20);
         var cylinder_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var cylinder = new THREE.Mesh(cylinder_g, cylinder_m);
         cylinder.position.set(0,15,0);
         scene.add(cylinder);
 
-        /* var heribody_g = new THREE.SphereGeometry(0.2,32,32);
+        var heribody_g = new THREE.SphereGeometry(0.2,32,32);
         var heribody_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var heribody = new THREE.Mesh(heribody_g, heribody_m);
         heribody.scale.x = 0.5;
         heribody.position.set(0,14,0);
         scene.add(heribody);
 
-        var heribody1_g = new THREE.BoxGeometry(2,0.5,0.5);
+        /* var heribody1_g = new THREE.BoxGeometry(2,0.5,0.5);
         var heribody1_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var heribody1 = new THREE.Mesh(heribody1_g, heribody1_m);
         heribody1.position.set(3,13,0);
