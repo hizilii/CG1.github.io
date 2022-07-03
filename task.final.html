@@ -567,52 +567,52 @@
         var rleg3 = new THREE.Mesh(rleg3_g, rleg3_m);
         rleg3.position.set(0.2,-2.2,0);
 
-        var propeller_g = new THREE.BoxGeometry(5,0.1,0.2);
+        var propeller_g = new THREE.BoxGeometry(4,0.1,0.2);
         var propeller_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var propeller = new THREE.Mesh(propeller_g, propeller_m);
         propeller.rotation.y = 10;
         propeller.position.set(0,15,0);
         scene.add(propeller);
 
-        var propeller1_g = new THREE.BoxGeometry(5,0.1,0.2);
+        var propeller1_g = new THREE.BoxGeometry(4,0.1,0.2);
         var propeller1_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var propeller1 = new THREE.Mesh(propeller1_g, propeller1_m);
         propeller1.rotation.y = -10;
         propeller1.position.set(0,15,0);
         scene.add(propeller1);
 
-        var cylinder_g = new THREE.CylinderGeometry(0.1, 0.1, 0.5, 20);
+        var cylinder_g = new THREE.CylinderGeometry(0.1, 0.1, 0.3, 20);
         var cylinder_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var cylinder = new THREE.Mesh(cylinder_g, cylinder_m);
-        cylinder.position.set(0,14.5,0);
+        cylinder.position.set(0,14.8,0);
         scene.add(cylinder);
 
         var heribody_g = new THREE.SphereGeometry(1,32,32);
         var heribody_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var heribody = new THREE.Mesh(heribody_g, heribody_m);
         heribody.scale.x = 2;
-        heribody.position.set(0,13,0);
+        heribody.position.set(0,14,0);
         scene.add(heribody);
 
-        var heribody1_g = new THREE.BoxGeometry(2,0.3,0.3);
+        var heribody1_g = new THREE.BoxGeometry(2,0.2,0.2);
         var heribody1_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var heribody1 = new THREE.Mesh(heribody1_g, heribody1_m);
-        heribody1.position.set(3,13,0);
+        heribody1.position.set(2.8,14,0);
         scene.add(heribody1);
 
-        var board_g = new THREE.BoxGeometry(0.3,0.5,0.3);
+        var board_g = new THREE.BoxGeometry(0.1,0.7,0.1);
         var board_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var board = new THREE.Mesh(board_g, board_m);
-        board.position.set(5,14,0);
+        board.position.set(3.5,14,0);
         scene.add(board);
 
-        /* var board1_g = new THREE.BoxGeometry(0.3,0.5,0.3);
+        var board1_g = new THREE.BoxGeometry(0.1,0.7,0.1);
         var board1_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var board1 = new THREE.Mesh(board1_g, board1_m);
-        board1.position.set(5,12,0);
+        board1.position.set(3.5,13,0);
         scene.add(board1);
 
-        var herileg_g = new THREE.BoxGeometry(0.05,0.2,0.05);
+        /* var herileg_g = new THREE.BoxGeometry(0.05,0.2,0.05);
         var herileg_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var herileg = new THREE.Mesh(herileg_g, herileg_m);
         herileg1.rotation.y = -5;
