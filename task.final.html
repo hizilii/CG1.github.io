@@ -570,18 +570,18 @@
         var propeller_g = new THREE.BoxGeometry(5,0.1,0.2);
         var propeller_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var propeller = new THREE.Mesh(propeller_g, propeller_m);
-        propeller.rotation.x = 5;
+        propeller.rotation.y = 30;
         propeller.position.set(0,15,0);
         scene.add(propeller);
 
-        /* var propeller1_g = new THREE.BoxGeometry(5,0.1,0.2);
+        var propeller1_g = new THREE.BoxGeometry(5,0.1,0.2);
         var propeller1_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var propeller1 = new THREE.Mesh(propeller1_g, propeller1_m);
-        propeller1.rotation.x = -5;
+        propeller1.rotation.y = -30;
         propeller1.position.set(0,15,0);
         scene.add(propeller1);
 
-        var cylinder_g = new THREE.CylinderGeometry(0.1, 0.1, 1, 20);
+        /* var cylinder_g = new THREE.CylinderGeometry(0.1, 0.1, 1, 20);
         var cylinder_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var cylinder = new THREE.Mesh(cylinder_g, cylinder_m);
         cylinder.position.set(0,15,0);
@@ -709,7 +709,7 @@
         woman2.add(rarm3);
         woman2.add(lleg3);
         woman2.add(rleg3);
-        woman2.position.set(0.6,6.3,-1.5);
+        woman2.position.set(8,6.3,-1.5);
         scene.add(woman2);
 
         update();
