@@ -587,7 +587,7 @@
         cylinder.position.set(0,15,0);
         scene.add(cylinder);
 
-        var heribody_g = new THREE.ellipseGeometry(0,0,10,10,20,10);
+        var heribody_g = new THREE.ellipseGeometry(0,0,10,10,20,false);
         var heribody_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var heribody = new THREE.Mesh(heribody_g, heribody_m);
         heribody.position.set(0,14,0);
