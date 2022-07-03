@@ -587,11 +587,70 @@
         cylinder.position.set(0,15,0);
         scene.add(cylinder);
 
-        var heribody_g = new THREE.ellipseGeometry(0,0,10,10,20,false);
+        var heribody_g = new THREE.SphereGeometry(0.2,32,32);
         var heribody_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
         var heribody = new THREE.Mesh(heribody_g, heribody_m);
+        heribody.scale.x = 0.5;
         heribody.position.set(0,14,0);
         scene.add(heribody);
+
+        var heribody1_g = new THREE.BoxGeometry(2,0.5,0.5);
+        var heribody1_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
+        var heribody1 = new THREE.Mesh(heribody1_g, heribody1_m);
+        heribody1.position.set(3,13,0);
+        scene.add(heribody1);
+
+        var board_g = new THREE.BoxGeometry(0.3,0.5,0.3);
+        var board_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
+        var board = new THREE.Mesh(board_g, board_m);
+        board.position.set(5,14,0);
+        scene.add(board);
+
+        var board1_g = new THREE.BoxGeometry(0.3,0.5,0.3);
+        var board1_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
+        var board1 = new THREE.Mesh(board1_g, board1_m);
+        board1.position.set(5,12,0);
+        scene.add(board1);
+
+        var herileg_g = new THREE.BoxGeometry(0.05,0.2,0.05);
+        var herileg_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
+        var herileg = new THREE.Mesh(herileg_g, herileg_m);
+        herileg1.rotation.y = -5;
+        herileg.position.set(-0.5,10,0.5);
+        scene.add(herileg);
+
+        var herileg1_g = new THREE.BoxGeometry(0.05,0.2,0.05);
+        var herileg1_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
+        var herileg1 = new THREE.Mesh(herileg1_g, herileg1_m);
+        herileg1.rotation.y = -5;
+        herileg1.position.set(0.5,10,0.5);
+        scene.add(herileg1);
+
+        var herileg2_g = new THREE.BoxGeometry(0.05,0.2,0.05);
+        var herileg2_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
+        var herileg2 = new THREE.Mesh(herileg2_g, herileg2_m);
+        herileg2.rotation.y = -5;
+        herileg2.position.set(-0.5,10,-0.5);
+        scene.add(herileg2);
+
+        var herileg3_g = new THREE.BoxGeometry(0.05,0.2,0.05);
+        var herileg3_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
+        var herileg3 = new THREE.Mesh(herileg3_g, herileg3_m);
+        herileg3.rotation.y = -5;
+        herileg3.position.set(0.5,10,-0.5);
+        scene.add(herileg3);
+
+        var herileg4_g = new THREE.BoxGeometry(3,0.2,0.2);
+        var herileg4_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
+        var herileg4 = new THREE.Mesh(herileg4_g, herileg4_m);
+        herileg4.position.set(0,9,0.5);
+        scene.add(herileg4);
+
+        var herileg5_g = new THREE.BoxGeometry(0.05,0.2,0.05);
+        var herileg5_m = new THREE.MeshPhongMaterial({ color: 0xd3d3d3 });
+        var herileg5 = new THREE.Mesh(herileg5_g, herileg5_m);
+        herileg5.position.set(0,9,0.5);
+        scene.add(herileg5);
 
         // 橋のオブジェクト
         const bridge = new THREE.Group();
