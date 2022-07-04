@@ -727,7 +727,7 @@
         hericopter.add(herileg3);
         hericopter.add(herileg4);
         hericopter.add(herileg5);
-        hericoter.positon.set(0,0,14);
+        hericopter.positon.set(0,0,14);
         scene.add(hericopter);
 
         update();
@@ -761,6 +761,11 @@
           woman2.position.z += 0.01;
           if(woman2.position.z >24){
             woman2.position.z = -20;
+          }
+
+          hericopter.position.x -= 0.005;
+          if(hericopter.position.x == -11){
+            hericopter.position.x = -11;
           }
         }
       }
