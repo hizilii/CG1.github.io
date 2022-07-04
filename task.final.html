@@ -768,6 +768,9 @@
             hericopter.position.x = -11;
 
             hericopter.position.y -= 0.005;
+            if(hericopter.position.y < 5.3){
+              hericopter.position.y = 5.3;
+            }
           }
         }
       }
