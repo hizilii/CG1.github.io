@@ -26,7 +26,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 0, 30);
+        camera.position.set(0, 3, 35);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -768,8 +768,8 @@
             hericopter.position.x = -11;
 
             hericopter.position.y -= 0.005;
-            if(hericopter.position.y < -5.2){
-              hericopter.position.y = -5.2;
+            if(hericopter.position.y < -5.4){
+              hericopter.position.y = -5.4;
             }
           }
         }
